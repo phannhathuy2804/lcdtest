@@ -1,0 +1,29 @@
+bindings:
+{
+	lcdtest.lcdtestComponent.le_spi -> spiService.le_spi
+	lcdtest.lcdtestComponent.le_gpioPin7 -> gpioService.le_gpioPin7
+	lcdtest.lcdtestComponent.le_gpioPin8 -> gpioService.le_gpioPin8
+}
+executables:
+{
+	lcdtest = ( lcdtestComponent )
+}
+
+processes:
+{
+	envVars:
+	{
+		LE_LOG_LEVEL = DEBUG
+	}
+
+	run:
+	{
+		( lcdtest )
+	}
+
+	maxCoreDumpFileBytes: 512K
+	maxFileBytes: 512K
+}
+
+version: 1.0.0
+maxFileSystemBytes: 512K
